@@ -23,4 +23,8 @@ public interface ICommandService {
     Optional<Command> findLeastExpensive();
 
     List<UUID> findAllUUID();
+
+    int findNumberOfCommands();
+
+    double sumAllAmounts();
 }

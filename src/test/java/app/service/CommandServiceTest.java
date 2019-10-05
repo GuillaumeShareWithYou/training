@@ -84,4 +84,21 @@ public class CommandServiceTest {
         assertThat(amountsSorted).isSorted();
     }
 
+    @Test
+    public void findNumberOfCommands() {
+        int numberOfCommands = this.commandService.findNumberOfCommands();
+        assertThat(numberOfCommands).isEqualTo(ApplicationConstants.COMMAND_LIST_SIZE);
+    }
+
+    @Test
+    public void sumAllAmounts() {
+        double total = this.commandService.sumAllAmounts();
+        double expected = 0.0;
+        List<Command> all = this.commandService.findAll();
+        for (Command command : all) {
+            expected += command.getAmount();
+        }
+
+        assertThat(total).isEqualTo(expected);
+    }
 }

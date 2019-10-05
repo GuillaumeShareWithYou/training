@@ -15,6 +15,7 @@ public class CommandService implements ICommandService{
     public CommandService() {
         this.commandRepository = new CommandRepository();
     }
+
     @Override
     public List<Command> findAll() {
         return this.commandRepository.findAll();
@@ -52,6 +53,16 @@ public class CommandService implements ICommandService{
 
     @Override
     public List<UUID> findAllUUID() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public int findNumberOfCommands() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public double sumAllAmounts() {
         throw new NotImplementedException();
     }
 }
